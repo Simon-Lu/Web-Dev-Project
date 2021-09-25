@@ -1,0 +1,68 @@
+*::before {
+    box-sizing: border-box;
+}
+*::after {
+    box-sizing: border-box;
+}
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;  /* removes padding and margin for the
+                whole screen so I can make sure background fills screen*/
+    background: linear-gradient(to right,#a4508b,#ffa69e );        
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;   
+    min-height:100vh; /*fills 100 percent of vertical height all the time*/
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    font-size: 36px;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+    background-color:rgba(255, 255, 255, .65);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .95);
+}
+
+.bigButton {
+    grid-column: span 2;
+}
+
+.hugeButton {
+    grid-column: span 3;
+}
+
+.output {
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .85);
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding:12px;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+}
+
+.output .previous-operand {
+    color:rgba(255, 255, 255, .65);
+    font-size: 20px;
+}
+.output .current-operand {
+    color:white;
+    font-size: 40px;
+}
